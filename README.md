@@ -1,6 +1,76 @@
-# PrinterLabelGenerator
+<h1 align="center"> AVEVA QR-Label Generator</h1>
+<p align="center">Automatically generate QR-Codes in a MES project for storage location and inventory items as well as custom codes for scan actions.</p>
 
-## Build Setup
+https://user-images.githubusercontent.com/25683183/169794614-764309bb-9ce2-4705-8364-2cb439b6274f.mp4
+
+
+## Why using Label Generator?
+
+This label generator provides automatic created QR-Codes for item inventory and storage locations. This allows scan-based actions with the MES system and thus less complicated user interactions.
+
+ ❯ 🔃 **Automatic generated** QR-Codes from MES system <br>
+ ❯ ✨ **Auto import** data from MES DB to stay up to date <br>
+ ❯ 📦 **Item inventory** QR-Codes for actions based on a specific material <br>
+ ❯ 🗄️ **Storage location** QR-Codes for item transfer based on a scan action <br>
+ ❯ 🔳 **Custom QR-Codes** to extend client-specific actions <br>
+
+
+<h2 align="center">🐳 Container deployment</h2>
+
+### Deploy with Docker CLI
+
+Add port mapping, environment variables and volume mount according to your needs.
+
+```bash
+$ docker run -it -p 3022:3000 -e <...> -v <...> toblu/aveva-qr-label-generator:<tag>
+```
+
+### Deploy on Portainer
+
+0️⃣ Configure image from docker hub
+
+```bash
+toblu/aveva-qr-label-generator:<tag>
+```
+
+1️⃣ Add port mapping
+
+```bash
+3022:3000
+```
+
+
+2️⃣ Define `.env` variables
+
+```bash
+DB_HOST=''
+DB_PORT=''
+DB_INSTANCE=''
+DB_NAME=''
+DB_USER=''
+DB_PASSWORD=''
+```
+
+3️⃣ Mount volume
+
+```bash
+<path to volume>:/usr/src/nuxt-app/data
+```
+
+4️⃣ Add network
+
+5️⃣ Deploy container
+<br>
+<br>
+🪄 Application is ready at `http://<host>:3022/`
+
+<h2 align="center">🐋 Docker Build</h2>
+
+```bash
+$ docker build -t <username>/nuxt-pluzzy-dashboard:<tag> .
+```
+
+<h2 align="center">🧪 Build setup</h2>
 
 ```bash
 # install dependencies
@@ -17,53 +87,5 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+For detailed explanation on how things work, check out the  [documentation](https://nuxtjs.org).
