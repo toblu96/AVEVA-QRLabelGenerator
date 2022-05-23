@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 bg-white border rounded-md">
-    <div class="grid relative">
-      <div class="flex p-4 space-x-6 justify-center border-b">
+    <div class="grid place-items-center relative">
+      <div class="flex w-full p-4 space-x-6 justify-center border-b">
         <div class="flex items-center space-x-2">
           <svg
             class="h-5 w-5 text-gray-400"
@@ -35,15 +35,14 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Darth Vader",
+      default: "Darth Vader"
     },
     qrValue: {
       type: [String, Number],
-      default: "Darth Vader",
-    },
-  },
+      default: "Darth Vader"
+    }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>
